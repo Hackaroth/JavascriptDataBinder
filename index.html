@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+		<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
+		<script type="module">
+			import DataBinder from "./DataBinder.js"
+			import DateTimeManagerLuxon from "./DateTimeManagerLuxon.js"
+			
+			window.DataBinder = DataBinder;
+			window.DataBinder.dateTimeManager = DateTimeManagerLuxon;
+		</script>
+
+		<script src="./index.js" defer></script>
+	
+	</head>
+	
+	<body>
+	
+		<input type="text" id="inpText" data-field="Utente.NomeCompleto" required />
+		<div id="inpDiv" data-field="Utente.DataNascita" data-formatter="date"></div>
+		<input type="datetime-local" id="inpData" data-field="Utente.DataNascita" required />
+		<input type="time" id="inpOra"  data-field="Utente.OraNascita" />
+		<input type="number" id="inpQt" data-field="Quantita" />
+		<input type="checkbox" id="cbAttivo" data-field="Attivo" />
+		<label id="lbl" data-field="Area"></label>
+		<textarea id="txtArea" data-field="Note"></textarea>
+		
+		<select id="sel" data-field="Selezione">
+	
+		</select>
+ 	
+	</body>
+
+
+</html>
